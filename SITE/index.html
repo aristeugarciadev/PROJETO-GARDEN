@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LUZ NO GARDEN 1.0</title>
+</head>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/style.css">
+
+    <!-- JAVASCRIPT-->
+    <script src="assets/main.js" defer></script>
+
+    <!-- GOOGLE FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet" 
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <header>
+        <h1>
+            LUZ COMPLEMENTAR NO GARDEN
+        </h1>
+    </header>
+<body>
+    
+    <section class="conteiner">
+        
+        <div id="txthora">Hora</div>  
+        <div id="txtdia"></div>
+
+        <div id="imglamp"></div>
+
+        <div id="informacoes">
+            
+            <h2>
+                <i class="fa-solid fa-location-dot"> <span id="cidade"></span></i>
+            </h2>
+            <p id="temperatura">Temperatura:
+                <span>38</span>&deg;C
+            </p>
+            
+            <div id="descri">
+                <p style="text-transform: capitalize;" id="descricao"></p>
+                <img 
+                    src="http://openweathermap.org/img/wn/01d.png" 
+                    alt="Condições do Clima" 
+                    id="weather-icon">
+            </div>
+            
+            <p id="umidade">Umidade: <i class="fa-solid fa-droplet"></i>
+                <span>48%</span> 
+            </p>
+            
+            <p id="wind">Velocidade do vento: <i class="fa-solid fa-wind"></i>
+                <span>3Km/h</span>
+             </p>
+             <p id="status">Status da lampada: <i class="fa-solid fa-lightbulb"></i>
+                <span> ON</span>
+             </p>
+
+             <p id="sunrise">Nascer do Sol: <span></span></p>
+             <p id="sunset">Pôr do Sol: <span></span></p>
+             <p id="tempolamp">Lampada ficará ligada por: <span></span> horas.</p>
+        </div>
+    </section>
+</body>
+
+<footer>
+    &copy; RHINO TECNOLOGY - 2023
+</footer>
+</html>
