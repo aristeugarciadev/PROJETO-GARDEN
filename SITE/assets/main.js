@@ -1,4 +1,10 @@
 
+    async function atualizarDados() {
+        
+/*setTimeout(function() {
+    window.location.reload(1);
+  }, 30000); // 30segundos*/
+
 //9588874fecfd08763eaf532d87ed13bf //CHAVE API WEATHER OPEN
 //6d769902-c4c9-4383-b08b-5f523d4edf29 //CHAVE API INFO
 //https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={9588874fecfd08763eaf532d87ed13bf}
@@ -24,14 +30,16 @@ const templamp = document.querySelector('#tempolamp span')
 //image.setAttribute('id' , 'foto')
 const agora = new Date();
 const hora = agora.getHours();
+const horaFormatada = hora.toString().padStart(2, '0');
 const mim = agora.getMinutes();
+const mimFormatada = mim.toString().padStart(2, '0');
 const sec = agora.getSeconds();
 const imagem = document.getElementById('imglamp')
 const img = document.createElement('img')
 const nomeMes = new Array ("janeiro", "fevereiro", "março", "abril", "Maio", "junho", "agosto", "outubro", "novembro", "dezembro")
 
 const dia_compconsto = `${agora.getDate()} - ${nomeMes[agora.getMonth()]} - ${agora.getFullYear()}`
-document.getElementById('txthora').innerHTML = `${hora}:${mim}:${sec}<br> `
+document.getElementById('txthora').innerHTML = `${horaFormatada}:${mimFormatada}<br> `
 document.getElementById('txtdia').innerHTML = `${dia_compconsto}`
 
 //CONFIGURANDO API WEATHER
@@ -57,20 +65,23 @@ wind.innerHTML = `${data.wind.speed} Km/h`;
 //NASCER DO SOL (CLARO)
 const sunrise = `${data.sys.sunrise}`;
 const sr = new Date(sunrise * 1000);
-const srh = sr.getHours();
+const srhfull = sr.getHours();
+const srh = srhfull.toString().padStart(2, '0');
 const srm = sr.getMinutes();
 sun.innerHTML = `${srh}:${srm}`;
 
 //POR DO SOL (ESCURO)
 const sunset = `${data.sys.sunset}`;
 const ss = new Date(sunset * 1000);
-const ssh = ss.getHours();
+const sshfull = ss.getHours();
+const ssh = sshfull.toString().padStart(2, '0');
 const ssm = ss.getMinutes();
 sunst.innerHTML = `${ssh}:${ssm}`;
 
 //calculo da diferença de hora
 const flicar = 18;
-const diferencahrs = flicar - (ssh - srh) ;
+const dife = flicar - (ssh - srh);
+const diferencahrs = dife.toString().padStart(2, '0');
 templamp.innerHTML = ` ${diferencahrs}`
 
 const lampligada = ssh + diferencahrs
@@ -91,5 +102,15 @@ if (agora.getHours() >= ssh) {
     statuslamp.innerHTML = "OFF"
 }
     imagem.appendChild(img)
-}
-    showData(city);
+    
+}       
+        setTimeout(function() {
+          window.location.reload(1);
+        }, 30000); // 30 segundos
+      
+        // Resto do código...
+      
+        showData(city);
+      }
+      
+      atualizarDados();
